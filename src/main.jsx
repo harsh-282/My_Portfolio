@@ -4,8 +4,10 @@ import {
   Award,
   BarChart3,
   BookOpen,
+  Brain,
   BriefcaseBusiness,
   Code2,
+  Database,
   GitBranch,
   GraduationCap,
   Link,
@@ -46,6 +48,12 @@ const professionalSkills = [
 ];
 
 const interests = ['Artificial Intelligence', 'Machine Learning', 'Data Analytics'];
+
+const highlights = [
+  { label: 'Current CGPA', value: '9.25', icon: Award },
+  { label: 'Core Focus', value: 'AI / ML', icon: Brain },
+  { label: 'Analytics Tools', value: 'Power BI', icon: Database },
+];
 
 const education = [
   {
@@ -152,16 +160,23 @@ function App() {
   return (
     <main>
       <nav className="topbar" aria-label="Primary navigation">
-        <a href="#profile">Profile</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+        <a className="brand" href="#profile">Harshini T</a>
+        <div className="nav-links">
+          <a href="#profile">Profile</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
       </nav>
 
       <header className="hero" id="profile">
         <div className="hero-copy">
+          <p className="status-pill">
+            <Sparkles size={16} />
+            Available for AI and data analytics opportunities
+          </p>
           <p className="eyebrow">Portfolio</p>
-          <h1>{profile.name}</h1>
+          <h1>Hi, I&apos;m <span>{profile.name}</span></h1>
           <p className="subtitle">{profile.title}</p>
           <p className="objective">{profile.objective}</p>
           <div className="hero-actions">
@@ -173,6 +188,15 @@ function App() {
               <GitBranch size={18} />
               GitHub
             </a>
+          </div>
+          <div className="highlight-grid" aria-label="Profile highlights">
+            {highlights.map(({ label, value, icon: Icon }) => (
+              <article className="highlight-card" key={label}>
+                <Icon size={24} />
+                <strong>{value}</strong>
+                <span>{label}</span>
+              </article>
+            ))}
           </div>
         </div>
         <div className="hero-panel" aria-label="Quick profile details">
@@ -200,7 +224,7 @@ function App() {
                 <article className="timeline-item" key={`${item.role}-${item.company}`}>
                   <div>
                     <h3>{item.role}</h3>
-                    <p>{item.company} · {item.mode}</p>
+                    <p>{item.company} &middot; {item.mode}</p>
                   </div>
                   <time>{item.period}</time>
                   <ul>
@@ -283,7 +307,7 @@ function App() {
       <section className="contact-band" id="contact">
         <div>
           <p className="eyebrow">Contact</p>
-          <h2>Let’s connect for AI, analytics, and learning opportunities.</h2>
+          <h2>Let&apos;s connect for AI, analytics, and learning opportunities.</h2>
         </div>
         <div className="contact-links">
           <a href={`tel:${profile.phone}`}><Phone size={18} />{profile.phone}</a>
