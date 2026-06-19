@@ -162,15 +162,14 @@ h1 {
 }
 
 .avatar {
-  display: grid;
-  place-items: center;
+  display: block;
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #1f6b62, #e95e4a);
-  color: #fff;
-  font-size: 2rem;
-  font-weight: 900;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 28px rgba(28, 44, 37, 0.16);
 }
 
 .hero-panel span,

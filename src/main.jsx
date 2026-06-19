@@ -15,6 +15,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import './styles.css';
+import profilePhoto from './assets/my photo.jpg';
 
 const profile = {
   name: 'Harshini T',
@@ -175,7 +176,7 @@ function App() {
           </div>
         </div>
         <div className="hero-panel" aria-label="Quick profile details">
-          <div className="avatar">HT</div>
+          <img className="avatar" src={profilePhoto} alt={profile.name} />
           <div>
             <span>Current Focus</span>
             <strong>AI, ML, and data analytics projects</strong>
