@@ -76,7 +76,7 @@ const projects = [
     tools: 'Python',
     description:
       'Developed a classic Tic Tac Toe game with interactive gameplay and AI-based logic.',
-    link: 'https://github.com/harsh-282/Tic-Tac-Toe.py',
+    link: 'https://github.com/harsh-282/CODSOFT/blob/main/Task-2.py',
   },
   {
     name: 'Business Overview Dashboard',
